@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subir evoluciones</title>
+    <!-- Bootswatch Cosmo Theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="topBarDesk">
+            <img src="../assets/img/logo.png" alt="logo nueva medicina" class="logo">
+            <ul class="menu">
+                <li class="serviciosDsk"><a href="../pages/nutricion.html">NUTRICION</a></li>
+                <li class="serviciosDsk"><a href="../pages/prestaciones.html">PRESTACIONES</a></li>
+                <li class="serviciosDsk"><a href="../pages/ingresar.html">SUBIR EVOLUCION</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Aplicacion / Funcion-->
+        <div id="App" class="row pt-5">
+
+            <!-- Formulario -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Agregar una tarea</h4>
+                    </div>
+                    <form id="task-form" class="card-body">
+                        <div class="form-group">
+                            <input type="text" id="title" name="title" placeholder="Nombre del Paciente"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" id="date" name="date" placeholder="dd/mm/aaa" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <textarea type="text" rows="5" cols="50" id="description" name="description"
+                                placeholder="Escriba su Informe" class="form-control"></textarea>
+                        </div>
+                        <input type="submit" value="Guardar" class="btn btn-primary btn-block">
+                    </form>
+                </div>
+            </div>
+
+            <!-- TASKS LIST -->
+            <div id="task-list" class="col-md-8">
+                <!-- <div class="card text-center mb-4">
+                    <div class="card-body">
+                        <strong>Título</strong>: Tarea -
+                        <strong>Descripción</strong>: descripción
+                        <button href="#" class="btn btn-danger" id="title" name="delete" value="title">Delete</button>
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/ingresarEvolucion.js" type="module"></script>
+</body>
+
+</html>
