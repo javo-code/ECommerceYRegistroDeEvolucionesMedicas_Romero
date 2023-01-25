@@ -4,73 +4,55 @@
   box-sizing: border-box;
 }
 
-header .topBarDesk {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  height: 100px;
-  background-color: #fff;
-}
-header .topBarDesk a {
-  display: flex;
-  margin-left: 5px;
-}
-header .topBarDesk ul {
-  display: flex;
-  gap: 20px;
-  margin-right: 20px;
-}
-header .topBarDesk ul li {
-  list-style: none;
-}
-header .topBarDesk ul li a {
-  text-decoration: none;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 20px;
-  color: #0e980e;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-.first-line {
+img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px !important;
+}
+
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 10%;
+  /* box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px; */
   box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  /* margin-bottom: 20px; */
 }
-.first-line h1 {
+
+h1 {
   color: rgb(225, 76, 65);
   text-transform: uppercase;
   font-weight: 500px;
   font-size: 30px;
   margin: 0;
 }
-.first-line #cesta-carrito {
+
+#cesta-carrito {
   border: none;
   color: rgb(225, 76, 65);
   font-size: 30px;
   background-color: white;
   border-radius: 50%;
-  margin-top: 3px;
   padding: 10px 20px;
   transition: all 0.3s;
 }
-.first-line #cesta-carrito:hover {
+
+#cesta-carrito:hover {
   cursor: pointer;
   color: white;
   background-color: rgb(225, 76, 65);
 }
-.first-line #cesta-carrito:focus {
+
+#cesta-carrito:focus {
   outline: none;
 }
 
-main img {
-  width: 100%;
-}
-main h2 span {
-  color: #0e980e;
-}
-main #producto-contenedor {
+#producto-contenedor {
   display: grid;
   gap: 1rem;
   max-width: 60rem;
@@ -79,54 +61,16 @@ main #producto-contenedor {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-main #h2Servicios {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 16px;
-  margin: 0;
-  padding-left: 20px;
-  line-height: 18px;
+
+p {
+  line-height: 1.8;
 }
-main .gridServicios {
-  display: block;
-}
-main .gridServicios .servMain {
-  display: flex;
-  align-items: center;
+
+.card {
+  max-width: 30%;
+  padding: 10px;
   border-radius: 15px;
-  box-shadow: 6px 5px 5px rgba(0, 128, 0, 0.4);
-}
-main .gridServicios .servMain label {
-  width: 50%;
-  text-align: center;
-  color: black;
-}
-main .gridServicios .servMain a {
-  width: 50%;
-}
-main .gridServicios .servMain a img {
-  height: 130px;
-  padding: 5px;
-  margin-bottom: -10px;
-  border-radius: 12px;
-}
-main .gridServicios .servMain p {
-  color: black;
-  display: flex;
-  justify-content: center;
-}
-main .gridServicios .servMain__2 {
-  margin-top: 15px;
-}
-main .card {
-  display: flex;
-  position: unset;
-}
-main .card-image {
-  width: 25%;
-  position: unset;
-}
-main .card-content {
-  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 select {
@@ -229,31 +173,6 @@ select {
 
 .boton-eliminar:focus {
   outline: none;
-}
-
-footer .redes {
-  margin-top: 2%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-footer .copyright {
-  text-align: center;
-}
-
-.success,
-.error {
-  color: white;
-  padding: 5px;
-  margin: 5px 0 15px 0;
-}
-
-.success {
-  background: green;
-}
-
-.error {
-  background: red;
 }
 
 /*# sourceMappingURL=style.css.map */

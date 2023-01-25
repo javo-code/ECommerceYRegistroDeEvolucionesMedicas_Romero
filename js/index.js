@@ -1,1 +1,1 @@
-document.addEventListener('DOMContentLoaded', mostrarProductos(productos))
+document.addEventListener('DOMContendLoaded', pintarProductos(productos))
