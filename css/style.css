@@ -5,11 +5,12 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background: rgba(0, 128, 0, 10%);
 }
 
 img {
-  width: 100%;
+  width: 50%;
   margin-bottom: 10px;
   border-radius: 10px !important;
 }
@@ -25,7 +26,7 @@ header {
 }
 
 h1 {
-  color: rgb(225, 76, 65);
+  color: green;
   text-transform: uppercase;
   font-weight: 500px;
   font-size: 30px;
@@ -34,18 +35,18 @@ h1 {
 
 #cesta-carrito {
   border: none;
-  color: rgb(225, 76, 65);
+  color: green;
   font-size: 30px;
   background-color: white;
   border-radius: 50%;
   padding: 10px 20px;
-  transition: all 0.3s;
+  transition: all .3s;
 }
 
 #cesta-carrito:hover {
   cursor: pointer;
   color: white;
-  background-color: rgb(225, 76, 65);
+  background-color: green
 }
 
 #cesta-carrito:focus {
@@ -53,24 +54,32 @@ h1 {
 }
 
 #producto-contenedor {
-  display: grid;
+  display: flex;
   gap: 1rem;
-  max-width: 60rem;
+  max-width: 100rem;
+  /*ver*/
   margin: 60px auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  /*ver*/
   flex-wrap: wrap;
 }
 
 p {
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .card {
+  max-height: 100%;
   max-width: 30%;
   padding: 10px;
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.card p {
+  font-size: 14px;
+  font-weight: 500;
 }
 
 select {
@@ -80,6 +89,8 @@ select {
 }
 
 .modal-contenedor {
+  background-image: url('../assets/img/nutriconista1.jpg  ');
+  background-size: cover;
   position: fixed;
   top: 0;
   width: 100%;
@@ -87,7 +98,7 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.5s;
+  transition: all .5s;
   opacity: 0;
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.3);
@@ -101,13 +112,18 @@ select {
 
 .modal-carrito {
   position: relative;
-  background-color: white;
+  background-color: rgba(27, 162, 0, 0.9);
   min-width: 500px;
   padding: 20px;
   margin-top: -100%;
-  transition: all 0.5s;
+  transition: all .5s;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  box-shadow: 5px 5px 15px 0px;
+}
+
+.modal-carrito .precioProducto {
+  font-size: 30px;
+  color: white;
 }
 
 .modal-active .modal-carrito {
@@ -115,7 +131,7 @@ select {
 }
 
 .modal-carrito h3 {
-  color: rgb(225, 76, 65);
+  color: white;
   padding-bottom: 5px;
 }
 
@@ -124,8 +140,8 @@ select {
   top: 15px;
   right: 15px;
   font-size: 20px;
-  color: rgb(225, 76, 65) !important;
-  border: none;
+  color: green;
+  border-radius: 10px;
   background-color: white;
 }
 
@@ -142,28 +158,41 @@ select {
 }
 
 .card .card-image .card-title {
-  color: rgb(225, 76, 65);
+  color: black;
+  font-size: 30px;
   position: unset;
 }
 
+.card .card-image {
+  width: 50%;
+
+}
+
+.card .card-precio {
+  font-size: 16px;
+}
+
+
 .productoEnCarrito {
-  border-left: 5px solid lightblue;
+  border-left: 5px solid green;
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
   margin: 5px 0;
   padding: 5px 10px;
   display: flex;
   justify-content: space-between;
+  color: white;
+  font-size: 20px;
 }
 
 .productoEnCarrito:hover {
-  border-left: 5px solid rgb(225, 76, 65);
+  border-left: 5px solid green;
 }
 
 .boton-eliminar {
   background-color: white;
-  color: #ff6961;
-  border: none;
+  color: black;
+  border-radius: 80%;
   font-size: 20px;
 }
 
@@ -174,5 +203,3 @@ select {
 .boton-eliminar:focus {
   outline: none;
 }
-
-/*# sourceMappingURL=style.css.map */

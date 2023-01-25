@@ -39,5 +39,25 @@ const productos = [
         precio: 10000,
         imagen: '../assets/img/products/alfare.jpg',
         cantidad: 1
+    },
+
+    {
+        id: 5,
+        nombre: "Lactoproteyn",
+        tipo: "alimento",
+        desc: "Caseinato de calcio instantáneo que permite enriquecer las preparaciones alimenticias con proteínas de elevado valor biológico, aportando todos los aminoácidos esenciales y no esenciales. Lactoproteyn® puede ser agregado a preparaciones dulces o saladas, frías o calientes.",
+        precio: 7000,
+        imagen: '../assets/img/products/lactoproteyn.jpg',
+        cantidad: 1
+    },
+
+    {
+        id: 6,
+        nombre: "Alfare",
+        tipo: "alimento",
+        desc: "Fórmula semielemental con proteína extensamente hidrolizada, de baja osmolaridad, cuya administración está particularmente indicada para la alimentación de niños con problemas de digestión y absorción, provocados por trastornos de tipo gastrointestina.",
+        precio: 10000,
+        imagen: '../assets/img/products/alfare.jpg',
+        cantidad: 1
     }
 ];

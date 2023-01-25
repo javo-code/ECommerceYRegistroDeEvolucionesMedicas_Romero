@@ -34,7 +34,7 @@ const pintarProductoCarrito = (producto) => {
     div.classList.add('productoEnCarrito')
     div.innerHTML = `
         <p>${producto.nombre}</p>
-        <p>Precio: ${producto.precio}</p>
+        <p>Precio: $ ${producto.precio};00</p>
         <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
         <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
     `
@@ -67,7 +67,7 @@ const pintarCarrito = (carrito) => {
         div.classList.add('productoEnCarrito')
         div.innerHTML = `
             <p>${producto.nombre}</p>
-            <p>Precio: ${producto.precio}</p>
+            <p>Precio: $ ${producto.precio},00</p>
             <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
             <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
         `
