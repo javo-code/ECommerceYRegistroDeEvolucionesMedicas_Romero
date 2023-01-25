@@ -18,10 +18,12 @@ const validarProductoRepetido = (productoId) => {
         const producto = productos.find(producto => producto.id == productoId)
         carrito.push(producto)
         mostrarProductoCarrito(producto)
+        actualizarTotalesCarrito(carrito)
     } else {
         productoRepetido.cantidad++
         const cantidadProducto = document.getElementById(`cantidad${productoRepetido.id}`)
         cantidadProducto.innerText = `cantidad ${productoRepetido.cantidad}`
+        actualizarTotalesCarrito(carrito)
     }
 };
 
@@ -37,4 +39,26 @@ const mostrarProductoCarrito = (producto) => {
     `
     contenedor.appendChild(div)
 };
+
+const actualizarTotalesCarrito = (carrito) => {
+    const totalCantidad = carrito.reduce((accum, articulo) => accum + articulo.cantidad, 0)
+    const totalCompra = carrito.reduce((accum, articulo) => accum + (articulo.precio * articulo.cantidad), 0)
+
+    mostrarTotalesCarrito(totalCantidad, totalCompra)
+};
+
+const mostrarTotalesCarrito = (totalCantidad, totalCompra) => {
+
+    const contadorCarrito = document.getElementById('contador-carrito')
+    const precioTotal = document.getElementById('precioTotal')
+
+    contadorCarrito.innerText = totalCantidad
+    precioTotal.innerText = totalCompra
+};
+
+const eliminarProductosCarrito = (productoId) => {
+    const productoIndex = carrito.findIndex(producto => producto.id == productoId)
+    carrito.splice(productoIndex, 1)
+}
+
 
