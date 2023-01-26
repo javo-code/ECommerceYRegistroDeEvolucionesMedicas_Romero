@@ -60,4 +60,5 @@ const productos = [
         imagen: '../assets/img/products/alfare.jpg',
         cantidad: 1
     }
+
 ];

@@ -10,10 +10,10 @@ productoContenedor.addEventListener('click', (e) => {
 
 const validarProductoRepetido = (productoId) => {
     const productoRepetido = carrito.find(producto => producto.id == productoId)
-
-    if (localStorage.getItem('carrito')) {
-        carrito = obtenerCarritoStorage()
-    }
+    /* 
+        if (localStorage.getItem('carrito')) {
+            carrito = obtenerCarritoStorage()
+        } */
 
     if (!productoRepetido) {
         const producto = productos.find(producto => producto.id == productoId)
@@ -39,6 +39,7 @@ const pintarProductoCarrito = (producto) => {
         <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
     `
     contenedor.appendChild(div)
+
 };
 
 const actualizarTotalesCarrito = (carrito) => {
@@ -46,7 +47,7 @@ const actualizarTotalesCarrito = (carrito) => {
     const totalCompra = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0)
 
     pintarTotalesCarrito(totalCantidad, totalCompra)
-    guardarCarritoStorage(carrito)
+    /* guardarCarritoStorage(carrito) */
 };
 
 const pintarTotalesCarrito = (totalCantidad, totalCompra) => {
@@ -69,14 +70,14 @@ const pintarCarrito = (carrito) => {
             <p>${producto.nombre}</p>
             <p>Precio: $ ${producto.precio},00</p>
             <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
-            <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
+              <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
         `
         contenedor.appendChild(div)
     });
 };
 
 const eliminarProductosCarrito = (productoId) => {
-    const productoIndex = carrito.findIndex(producto => producto.id == productoId)
+    const productoIndex = carrito.findIndex((producto) => producto.id == productoId)
     carrito.splice(productoIndex, 1)
     pintarCarrito(carrito)
     actualizarTotalesCarrito(carrito)
