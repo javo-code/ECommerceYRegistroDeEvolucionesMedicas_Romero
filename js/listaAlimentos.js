@@ -43,21 +43,21 @@ const productos = [
 
     {
         id: 5,
-        nombre: "Lactoproteyn",
+        nombre: "Fresubin",
         tipo: "alimento",
-        desc: "Caseinato de calcio instantáneo que permite enriquecer las preparaciones alimenticias con proteínas de elevado valor biológico, aportando todos los aminoácidos esenciales y no esenciales. Lactoproteyn® puede ser agregado a preparaciones dulces o saladas, frías o calientes.",
-        precio: 7000,
-        imagen: '../assets/img/products/lactoproteyn.jpg',
+        desc: "Suplemento de proteína de suero de leche en polvo (polvo instantáneo), sin fibra. Además es clínicamente libre de lactosa y sin gluten. La proteína en polvo de Fresubin se utiliza para el tratamiento dietético de pacientes con riesgo de malnutrición relacionada con alguna enfermedad, en particular aquellas que incrementan las necesidades de proteínas, tales como, el cáncer, después de una cirugía, la sarcopenia y el retraso en el crecimiento pediátrico.",
+        precio: 9500,
+        imagen: '../assets/img/products/fresubin.jpg',
         cantidad: 1
     },
 
     {
         id: 6,
-        nombre: "Alfare",
+        nombre: "Alterna",
         tipo: "alimento",
-        desc: "Fórmula semielemental con proteína extensamente hidrolizada, de baja osmolaridad, cuya administración está particularmente indicada para la alimentación de niños con problemas de digestión y absorción, provocados por trastornos de tipo gastrointestina.",
-        precio: 10000,
-        imagen: '../assets/img/products/alfare.jpg',
+        desc: "Fórmula nutricional líquida de alta densidad calórico/proteica, para personas con estrés metabólico que pueden beneficiarse con la adición de arginina en su dieta. Puede ser utilizado como única fuente de nutrientes o como suplemento a la dieta, bajo supervisión médica.",
+        precio: 9500,
+        imagen: '../assets/img/products/alterna.jpg',
         cantidad: 1
     }
 

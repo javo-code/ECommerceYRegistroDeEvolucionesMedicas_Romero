@@ -64,7 +64,7 @@ img {
 }
 
 h1 {
-    color: rgb(225, 76, 65);
+    color: #000;
     text-transform: uppercase;
     font-weight: 500px;
     font-size: 30px;
@@ -201,6 +201,7 @@ select {
 }
 
 .modal-carrito {
+    background-image: url(../assets/img/nutricion.jpg);
     position: relative;
     background-color: rgba(257, 162, 0, 0.9);
     min-width: 500px;
@@ -259,7 +260,7 @@ select {
 }
 
 .card .card-precio {
-    font-size: 16px;
+    font-size: 22px;
 }
 
 
