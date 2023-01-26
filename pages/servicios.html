@@ -1,45 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nueva Medicina</title>
+    <title>Servicios Profesionales</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style2.css">
 </head>
 
 <body>
+
     <header>
-        <nav class="topBarDesk">
-            <img src="../assets/img/logo.png" alt="logo nueva medicina" class="logo">
+        <nav class="navbar">
+            <a href="../index.html"><img src="../assets/img/logo.png" alt="logo nueva medicina" class="logo"></a>
             <ul class="menu">
                 <li class="serviciosDsk"><a href="../pages/nutricion.html">NUTRICION</a></li>
-                <li class="serviciosDsk"><a href="../pages/prestaciones.html">PRESTACIONES</a></li>
+                <li class="serviciosDsk"><a href="../pages/servicios.html">SERVICIOS PROFESIONALES</a></li>
                 <li class="serviciosDsk"><a href="../pages/ingresar.html">SUBIR EVOLUCION</a></li>
             </ul>
         </nav>
     </header>
-    <main id="prestacion-contenedor">
+    <div class="contenedor-icono-carrito">
+        <h1>Catálogo de Servicios Profesionales</h1>
+        <button class="icono-carrito" id="cesta-carrito"><i class="fas fa-shopping-cart"></i><span
+                id="contador-carrito">0</span></button>
+    </div>
+    <main id="producto-contenedor">
 
     </main>
 
     <div class="modal-contenedor">
         <div class="modal-carrito">
-            <h3>Carrito</h3>
+            <h3>Resumen de compra: </h3>
             <button id="btn-cerrar-carrito"><i class="fas fa-times-circle"></i></button>
             <div id="carrito-contenedor">
 
             </div>
-            <p class="precioPrestacion">Precio total: $<span id="precioTotal"></span></p>
-            <!-- <button class="realizar-pago">Ir a pagar</button> -->
+            <p class="precioProducto">Precio total: $ <span id="precioTotal"></span>,00</p>
+
+
+            <!-- Creo modal.js en el HTML por cuestiones de practicidad y luego pego en el archivo .js
+    
+            <p>Producto</p>
+          <p>Precio</p>
+          <p id=cantidad2${producto.id}>Cantidad</p>
+          <button class="btn waves-effect waves-ligth boton-eliminar" value="">X</button> -->
+
         </div>
     </div>
-
     <footer class="contenedor-footer">
         <div class="redes">
             <a href="https://www.facebook.com" class="fbIcon" target="_blank">
@@ -57,8 +70,13 @@
         </div>
 
     </footer>
-    <script src="../js/prestaciones.js"></script>
-    <script src="../js/carritoServProf.js"></script>
+
+    <script src="../js/listaPrestaciones.js"></script>
+    <script src="../js/modalPrestaciones.js"></script>
+    <script src="../js/carritoServicios.js"></script>
+    <script src="../js/homePrestaciones.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
