@@ -101,7 +101,7 @@ main {
     flex-wrap: wrap;
 }
 
-
+/* Index  */
 main #producto-contenedor {
     gap: 1rem;
     max-width: 120rem;
@@ -159,6 +159,8 @@ img {
     margin-top: 15px;
 }
 
+/* Seccion NUTRICION */
+
 .card {
     max-height: 100%;
     max-width: 30%;
@@ -179,7 +181,7 @@ select {
 }
 
 .modal-contenedor {
-    background-image: url('../assets/img/nutriconista1.jpg  ');
+
     background-size: cover;
     position: fixed;
     top: 0;
@@ -202,6 +204,8 @@ select {
 
 .modal-carrito {
     background-image: url(../assets/img/nutricion.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
     background-color: rgba(257, 162, 0, 0.9);
     min-width: 500px;
@@ -296,6 +300,50 @@ select {
     outline: none;
 }
 
+/* Seccion SUIR INFORMES */
+.container {
+    background-image: url(../assets/img/informes.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5px;
+}
+
+.card-informes {
+    margin: 10%;
+    padding: 18px;
+    line-height: 1.7px;
+}
+
+
+.card-body {
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+
+
+}
+
+#task-form {
+    border: 3px solid #09ba09;
+    border-radius: 10px;
+
+
+}
+
+.card-informes {
+    line-height: 2;
+}
+
+.card-informes strong {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+. {
+    color: #09ba09;
+}
+
+/* FOOTER */
 footer {
 
     background-color: #fff;
