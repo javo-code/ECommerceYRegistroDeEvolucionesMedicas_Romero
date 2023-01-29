@@ -118,6 +118,7 @@ img {
 .gridServicios {
     display: block;
     background-color: #fff;
+    margin-bottom: 2%;
 }
 
 .gridServicios .servMain {
@@ -300,7 +301,7 @@ select {
     outline: none;
 }
 
-/* Seccion SUIR INFORMES */
+/* Seccion SUBIR INFORMES */
 .container {
     background-image: url(../assets/img/informes.png);
     background-repeat: no-repeat;
@@ -339,15 +340,20 @@ select {
     font-weight: 800;
 }
 
+/* Seccion SEVICIOS */
+
+.banner-servicios img {
+    height: 95ex
+}
+
 
 /* FOOTER */
 footer {
-
+    /*margin-top: 100px;*/
     background-color: #fff;
 }
 
 footer .redes {
-    margin-top: 2%;
     padding-top: 1%;
     display: flex;
     justify-content: space-evenly;
