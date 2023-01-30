@@ -33,7 +33,7 @@ const pintarProdutoCarrito = (producto) => {
         <p>Precio: ${producto.precio}</p>
         <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
         <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
-      `
+    `
     contenedor.appendChild(div)
 };
 
@@ -64,11 +64,16 @@ const pintarCarrito = (carrito) => {
             <p>Precio: ${producto.precio}</p>
             <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad}</p>
             <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
-          `
+        `
         contenedor.appendChild(div)
     });
 
 };
+
+const finalizarCompra = document.getElementById('finCompra')
+finCompra.addEventListener('click', () => {
+    swal.fire("Su compra fue realizada con exito!")
+});
 
 const eliminarProductosCarrito = (productoId) => {
     const productoIndex = carrito.findIndex(producto => producto.id == productoId)

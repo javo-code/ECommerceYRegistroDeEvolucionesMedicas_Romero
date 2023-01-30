@@ -75,7 +75,7 @@ h1 {
     border: none;
     color: #09ba09;
     font-size: 30px;
-    background-color: white;
+    background-color: #fff;
     border-radius: 20%;
     border: 1px solid #09ba09;
     ;
@@ -86,7 +86,7 @@ h1 {
 
 #cesta-carrito:hover {
     cursor: pointer;
-    color: white;
+    color: #fff;
     background-color: #09ba09;
 }
 
@@ -219,7 +219,7 @@ select {
 
 .modal-carrito .precioProducto {
     font-size: 30px;
-    color: white;
+    color: #fff;
 }
 
 .modal-active .modal-carrito {
@@ -227,7 +227,7 @@ select {
 }
 
 .modal-carrito h3 {
-    color: white;
+    color: #fff;
     padding-bottom: 5px;
 }
 
@@ -238,7 +238,7 @@ select {
     font-size: 20px;
     color: #09ba09;
     border-radius: 10px;
-    background-color: white;
+    background-color: #fff;
 }
 
 .modal-carrito #btn-cerrar-carrito:hover {
@@ -251,6 +251,15 @@ select {
 
 .modal-carrito .producto-precio {
     padding-top: 10px;
+}
+
+.btn-finCompra {
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+    background-color: orange;
+    color: #000;
+    font-weight: 500;
 }
 
 .card .card-image .card-title {
@@ -277,17 +286,32 @@ select {
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
-    color: white;
+    color: #fff;
     font-size: 20px;
 }
 
+.btnFinalizarCompra {
+    width: 100%;
+    height: fit-content;
+    background-color: orange;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.productoEnCarrito p,
+.precioProducto {
+    text-shadow: 5px 3px 5px #000;
+}
+
 .productoEnCarrito:hover {
-    border-left: 5px solid #09ba09;
+    border-left: 5px solid orange;
 
 }
 
 .boton-eliminar {
-    background-color: white;
+    background-color: #fff;
     color: black;
     border-radius: 80%;
     font-size: 20px;
