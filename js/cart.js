@@ -72,7 +72,13 @@ const pintarCarrito = (carrito) => {
 
 const finalizarCompra = document.getElementById('finCompra')
 finCompra.addEventListener('click', () => {
-    swal.fire("Su compra fue realizada con exito!")
+    Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'La compra fue realizada con éxito!',
+        showConfirmButton: false,
+        timer: 2000
+    })
 });
 
 const eliminarProductosCarrito = (productoId) => {
