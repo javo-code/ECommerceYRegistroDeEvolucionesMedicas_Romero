@@ -8,9 +8,10 @@ const description = document.getElementById("description");
 const taskList = document.getElementById('task-list')
 
 
-const createTask = (titleTask, descriptionTask) => {
+const createTask = (titleTask, descriptionTask, dateTask) => {
     return {
         title: titleTask,
+        date: dateTask,
         description: descriptionTask
     }
 };
@@ -22,8 +23,9 @@ const addTask = (task) => {
     div.innerHTML = `
         <div class="card text-center mb-4">
             <div class="card-body">
-                <strong>Título</strong>: ${task.title} -
-                <strong>Descripción</strong>: ${task.description}
+                <strong>Título</strong>: ${task.title} <br>
+                <strong>Descripción</strong>: ${task.description} <br>
+                <strong>Fecha</strong>: ${task.date}
                 <button href="#" class="btn btn-danger" id="${task.title}" name="delete" value="title">Delete</button>
             </div>
         </div>
@@ -54,8 +56,9 @@ const showTasks = (tasks) => {
         div.innerHTML += `
             <div class="card card-informes text-center mb-4">
                 <div class="card-body">
-                    <strong>Paciente: </strong>: ${task.title} -
-                    <strong>Descripción</strong>: ${task.description}
+                    <strong>Paciente: </strong>: ${task.title}   <br>  
+                    <strong>Descripción</strong>: ${task.description} <br>
+                    <strong>Fecha</strong>: ${task.date}
                     <button href="#" class="btn-form btn btn-danger" id="${task.title}" name="delete" value="${task.title}">Delete</button>
                 </div>
             </div>
@@ -90,8 +93,9 @@ taskForm.addEventListener('submit', (e) => {
 
     const titleTask = title.value;
     const descriptionTask = description.value;
+    const dateTask = date.value;
 
-    const task = createTask(titleTask, descriptionTask);
+    const task = createTask(titleTask, descriptionTask, dateTask);
 
     addTask(task)
 });
