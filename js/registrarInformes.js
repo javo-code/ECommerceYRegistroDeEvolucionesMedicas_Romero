@@ -24,7 +24,7 @@ const addTask = (task) => {
         <div class="card text-center mb-4">
             <div class="card-body">
                 <strong>Título</strong>: ${task.title} <br>
-                <strong>Descripción</strong>: ${task.description} <br>
+                <strong>Informe</strong>: ${task.description} <br>
                 <strong>Fecha</strong>: ${task.date}
                 <button href="#" class="btn btn-danger" id="${task.title}" name="delete" value="title">Delete</button>
             </div>
@@ -57,7 +57,7 @@ const showTasks = (tasks) => {
             <div class="card card-informes text-center mb-4">
                 <div class="card-body">
                     <strong>Paciente: </strong>: ${task.title}   <br>  
-                    <strong>Descripción</strong>: ${task.description} <br>
+                    <strong>Informe</strong>: ${task.description} <br>
                     <strong>Fecha</strong>: ${task.date}
                     <button href="#" class="btn-form btn btn-danger" id="${task.title}" name="delete" value="${task.title}">Delete</button>
                 </div>
