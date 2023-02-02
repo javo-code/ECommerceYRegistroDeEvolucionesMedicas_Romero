@@ -161,8 +161,8 @@ if (procesarCompra) {
   });
 }
 
-listadoServicios.forEach((Serv) => {
-  const { id, nombre, precio, desc, img } = Serv;
+listadoServicios.forEach((serv) => {
+  const { id, nombre, precio, desc, img } = serv;
   if (contenedor) {
     contenedor.innerHTML += `
     <div class="card mt-3" style="width: 18rem;">
@@ -171,24 +171,24 @@ listadoServicios.forEach((Serv) => {
       <h5 class="card-title">${nombre}</h5>
       <p class="card-text">Precio: $${precio}</p>
       <p class="card-text">Descripción: ${desc}</p>
-      <button class="btn btn-primary" onclick="agregarServicio(${id})">Comprar Servicio</button>
+      <button class="btn btn-primary" onclick="agregarservicio(${id})">Comprar servicio</button>
     </div>
   </div>
     `;
   }
 });
 
-const agregarServicio = (id) => {
-  const existe = carrito.some(Serv => Serv.id === id)
+const agregarservicio = (id) => {
+  const existe = carrito.some(serv => serv.id === id)
 
   if (existe) {
-    const Serv = carrito.map(Serv => {
-      if (Serv.id === id) {
-        Serv.cantidad++
+    const serv = carrito.map(serv => {
+      if (serv.id === id) {
+        serv.cantidad++
       }
     })
   } else {
-    const item = listadoServicios.find((Serv) => Serv.id === id)
+    const item = listadoServicios.find((serv) => serv.id === id)
     carrito.push(item)
   }
   mostrarCarrito()
@@ -199,8 +199,8 @@ const mostrarCarrito = () => {
   const modalBody = document.querySelector(".modal .modal-body");
   if (modalBody) {
     modalBody.innerHTML = "";
-    carrito.forEach((Serv) => {
-      const { id, nombre, precio, desc, img, cantidad } = Serv;
+    carrito.forEach((serv) => {
+      const { id, nombre, precio, desc, img, cantidad } = serv;
       console.log(modalBody);
       modalBody.innerHTML += `
       <div class="modal-contenedor">
@@ -208,10 +208,10 @@ const mostrarCarrito = () => {
         <img class="img-fluid img-carrito" src="${img}"/>
         </div>
         <div>
-        <p>Servicio: ${nombre}</p>
+        <p>servicio: ${nombre}</p>
       <p>Precio: $${precio}</p>
       <p>Cantidad :${cantidad}</p>
-      <button class="btn btn-danger"  onclick="eliminarServicio(${id})">Eliminar Servicio</button>
+      <button class="btn btn-danger"  onclick="eliminarServicio(${id})">Eliminar servicio</button>
         </div>
       </div>
       
@@ -232,7 +232,7 @@ const mostrarCarrito = () => {
 
   if (precioTotal) {
     precioTotal.innerText = carrito.reduce(
-      (acc, Serv) => acc + Serv.cantidad * Serv.precio,
+      (acc, serv) => acc + serv.cantidad * serv.precio,
       0
     );
   }
@@ -245,90 +245,7 @@ function guardarStorage() {
 }
 
 function eliminarServicio(id) {
-  const juegoId = id;
-  carrito = carrito.filter((juego) => juego.id !== juegoId);
+  const servId = id;
+  carrito = carrito.filter((serv) => serv.id !== servId);
   mostrarCarrito();
 }
-function procesarPedido() {
-  carrito.forEach((Serv) => {
-    const listaCompra = document.querySelector("#lista-compra tbody");
-    const { id, nombre, precio, img, cantidad } = Serv;
-    if (listaCompra) {
-      const row = document.createElement("tr");
-      row.innerHTML += `
-              <td>
-              <img class="img-fluid img-carrito" src="${img}"/>
-              </td>
-              <td>${nombre}</td>
-            <td>${precio}</td>
-            <td>${cantidad}</td>
-            <td>${precio * cantidad}</td>
-            `;
-      listaCompra.appendChild(row);
-    }
-  });
-  totalProceso.innerText = carrito.reduce(
-    (acc, Serv) => acc + Serv.cantidad * Serv.precio,
-    0
-  );
-}
-
-function enviarCompra(e) {
-  e.preventDefault()
-  const cliente = document.querySelector('#cliente').value
-  const email = document.querySelector('#correo').value
-
-  if (email === '' || cliente == '') {
-    Swal.fire({
-      title: "¡Debes completar tu email y nombre!",
-      text: "Rellena el formulario",
-      icon: "error",
-      confirmButtonText: "Aceptar",
-    })
-  } else {
-
-    const btn = document.getElementById('button');
-
-    // document.getElementById('procesar-pago')
-    //  .addEventListener('submit', function(event) {
-    //    event.preventDefault();
-
-    btn.value = 'Enviando...';
-
-    const serviceID = 'default_service';
-    const templateID = 'template_qxwi0jn';
-
-    emailjs.sendForm(serviceID, templateID, this)
-      .then(() => {
-        btn.value = 'Finalizar compra';
-        alert('Correo enviado!');
-      }, (err) => {
-        btn.value = 'Finalizar compra';
-        alert(JSON.stringify(err));
-      });
-
-    const spinner = document.querySelector('#spinner')
-    spinner.classList.add('d-flex')
-    spinner.classList.remove('d-none')
-
-    setTimeout(() => {
-      spinner.classList.remove('d-flex')
-      spinner.classList.add('d-none')
-      formulario.reset()
-
-      const alertExito = document.createElement('p')
-      alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'col-12', 'mt-2', 'alert-success')
-      alertExito.textContent = 'Compra realizada correctamente'
-      formulario.appendChild(alertExito)
-
-      setTimeout(() => {
-        alertExito.remove()
-      }, 3000)
-
-
-    }, 3000)
-  }
-  localStorage.clear()
-
-}
-
