@@ -156,7 +156,11 @@ if (procesarCompra) {
         confirmButtonText: "Aceptar",
       });
     } else {
-      location.href = "compra.html";
+      Swal.fire({
+        icon: 'success',
+        title: 'Éxito!',
+        text: 'Perfecto! Pronto Recibiras un correo conla informacion de tu compra'
+      });
     }
   });
 }
