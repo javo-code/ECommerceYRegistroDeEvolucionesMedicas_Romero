@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
-  <title>Nueva Medicina</title>
+  <title>Servicios</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css" />
@@ -18,6 +18,7 @@
 
 <body>
   <header>
+
     <nav class="navbar">
       <a href="index.html"><img src="img/logo.png" alt="logo nueva medicina" class="logo"></a>
       <ul class="menu">
@@ -26,30 +27,52 @@
         <li class="serviciosDsk"><a href="informes.html">SUBIR EVOLUCION</a></li>
       </ul>
     </nav>
-  </header>
-
-  <img src="img/index.jpg" class="bannerIndex" alt="banner index">
-  <h2 id="h2Servicios">
-    NUESTROS <span>SERVICIOS</span>
-  </h2>
-
-  <div class="gridServicios" id="gridPrest">
-    <div class="servMain">
-      <a class="productos" href="pages/nutricion.html"><img id="nut" src="img/nutricion.jpg" alt="nutricion">
-      </a>
-      <a href="pages/nutricion.html">
-        <p class="prestacionesNutMain"> NUTRICION ENTERAL</p>
-      </a>
+    <div class="titleBar">
+      <h2 class="p-3 text-white">Servicios Profesionales</h2>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#modal">
+            <i class="bi bi-cart mx-5" id="carritoContenedor">0</i>
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="servMain servMain__2">
-      <a class="productos" href="servicios.html"><img id="enf" src="img/prestaciones.png" alt="prestaiones">
-      </a>
-      <a href="pages/prestaciones.html">
-        <p class="prestacionesServMain"> SERVICIOS PROFESIONALES </p>
-      </a>
+    </nav>
+  </header>
+  <main>
+    <div class="row mt-5" id="contenedor"></div>
+  </main>
+
+
+  <div class="container-xl">
+    <div class="modal" tabindex="-1" role="dialog" id="modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Carrito</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" id="vaciarCarrito">
+              Vaciar carrito
+            </button>
+            <button type="button" id="procesarCompra" class="btn btn-primary">
+              Continuar compra
+            </button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cerrar
+            </button>
+
+            <span>Precio total:</span>
+            <p class="text-center" id="precioTotal"></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
   <footer class="contenedor-footer">
     <div class="redes">
       <a href="https://www.facebook.com" class="fbIcon" target="_blank">
@@ -67,7 +90,9 @@
     </div>
 
   </footer>
-
+  <script src="appServicios.js"></script>
+  <script src="bootstrap.bundle.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
