@@ -17,7 +17,7 @@ a {
 }
 
 body {
-    background-color: #E3D8D6;
+    background-color: rgba(0, 128, 0, 0.1);
     overflow-x: hidden;
 }
 
@@ -37,7 +37,7 @@ nav {
 .navbar a img {
     width: auto;
     height: 100px;
-    border: 1px solid black;
+
 }
 
 .navbar ul {
@@ -57,6 +57,10 @@ nav {
     color: #09ba09;
 }
 
+.logo {
+    margin-top: -8px;
+}
+
 .titleBar {
     display: flex;
     justify-content: space-between;
@@ -66,6 +70,15 @@ nav {
     display: flex;
     align-items: center;
     gap: 2rem;
+    overflow: auto;
+
+}
+
+.modal-body {
+    background-image: url(img/nutricion.jpg);
+    background-size: cover;
+    overflow: scroll;
+    height: 230px;
 }
 
 .img-carrito {
@@ -73,9 +86,12 @@ nav {
     padding: 20px;
 }
 
-.modal-content {
-    background-color: #E3D8D6;
+
+
+.modal-body {
+    padding-top: 16px;
 }
+
 
 .parrafo {
     font-weight: 900;
@@ -93,6 +109,12 @@ a {
 
 .boton {
     opacity: 0;
+}
+
+.container-inf {
+    background-image: url(img/informes.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
 }
 
 /* FOOTER */

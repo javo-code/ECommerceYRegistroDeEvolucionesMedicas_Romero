@@ -117,9 +117,8 @@ stockProductos.forEach((prod) => {
     <img class="card-img-top mt-2" src="${img}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">${nombre}</h5>
-      <p class="card-text">Precio: ${precio}</p>
+      <p class="card-text">Precio: $${precio}</p>
       <p class="card-text">Descripcion: ${desc}</p>
-      <p class="card-text">Cantidad: ${cantidad}</p>
       <button class="btn btn-primary" onclick="agregarProducto(${id})">Comprar Producto</button>
     </div>
   </div>
@@ -158,7 +157,7 @@ const mostrarCarrito = () => {
         </div>
         <div>
         <p>Producto: ${nombre}</p>
-      <p>Precio: ${precio}</p>
+      <p>Precio: $${precio}</p>
       <p>Cantidad :${cantidad}</p>
       <button class="btn btn-danger"  onclick="eliminarProducto(${id})">Eliminar producto</button>
         </div>
