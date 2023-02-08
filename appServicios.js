@@ -3,7 +3,7 @@ const listadoServicios = [
     id: 1,
     nombre: "Médicos generalista",
     tipo: "prestacion",
-    desc: "Proporciona una mirada integral de la población y de sus problemas de salud. Es quien posee las capacidades para proveer y/o indicar el cuidado necesario en cada etapa del ciclo vital.",
+    desc: "Proporciona una mirada integral de la población y de sus problemas de salud.",
     precio: 10000,
     img: 'img/1.png',
     cantidad: 1
@@ -13,7 +13,7 @@ const listadoServicios = [
     id: 2,
     nombre: "Médicos interconsultores",
     tipo: "prestacion",
-    desc: "Tratamiento del dolor crónico, pero, además para la valoración y el manejo de las diferentes necesidades multidimensionales del binomio paciente-familia, que puedan presentarse en el transcurso de la enfermedad.",
+    desc: "Tratamiento del dolor crónico, valoración y el manejo de las diferentes necesidades",
     precio: 10000,
     img: 'img/2.png',
     cantidad: 1
@@ -22,7 +22,7 @@ const listadoServicios = [
     id: 3,
     nombre: "Enfermería general",
     tipo: "prestacion",
-    desc: "Funciones de la enfermería: promover la salud, prevenir la enfermedad, restaurar la salud y aliviar el sufrimiento.",
+    desc: "Promover la salud, prevenir la enfermedad, restaurar la salud y aliviar el sufrimiento.",
     precio: 10000,
     img: 'img/3.png',
     cantidad: 1
@@ -32,7 +32,7 @@ const listadoServicios = [
     id: 4,
     nombre: "Psicología",
     tipo: "prestacion",
-    desc: "Ayuda a enfrentar situaciones estresantes, a curarnos de adicciones , a controlar enfermedades crónicas y eliminar los obstáculos que nos impiden alcanzar nuestros objetivos.",
+    desc: "Ayuda a enfrentar situaciones estresantes y a eliminar los obstáculos que nos impiden alcanzar nuestros objetivos.",
     precio: 10000,
     img: 'img/4.png',
     cantidad: 1
@@ -41,7 +41,7 @@ const listadoServicios = [
     id: 5,
     nombre: "Kinesiología",
     tipo: "prestacion",
-    desc: "El profesional en Kinesiología y Fisiatría tiene como objetivo la prevención, conservación, evaluación, tratamiento y recuperación somatofuncional de las personas, aplicando la Kinesioterapia, la Kinefilaxia y la Fisioterapia. Realizar acciones de prevención y promoción de la salud.",
+    desc: "Prevención, conservación, evaluación, tratamiento y recuperación somatofuncional de las personas.",
     precio: 10000,
     img: 'img/5.png',
     cantidad: 1
@@ -51,7 +51,7 @@ const listadoServicios = [
     id: 6,
     nombre: "Estimulación temprana",
     tipo: "prestacion",
-    desc: "Tiene por objetivo, optimizar el desarrollo normal del niño; prevenir la aparición de déficit asociados a un riesgo biológico, psicológico o social.",
+    desc: "Optimiza el desarrollo normal del niño; prevenir la aparición de déficit asociados a un riesgo biológico, psicológico o social.",
     precio: 10000,
     img: 'img/6.png',
     cantidad: 1
@@ -60,7 +60,7 @@ const listadoServicios = [
     id: 7,
     nombre: "Psicomotrcista",
     tipo: "prestacion",
-    desc: "Aumento de la creatividad y la expresión, mejora de la memoria, favorece el control del cuerpo y los ovimientos, estimula la percepción del entorno, fomenta el aprendizaje y la concentración, fortalece la autoestima infantil.",
+    desc: "Estimula la percepción del entorno, fomenta el aprendizaje y la concentración, fortalece la autoestima infantil.",
     precio: 10000,
     img: 'img/7.png',
     cantidad: 1
@@ -70,7 +70,7 @@ const listadoServicios = [
     id: 8,
     nombre: "Fonoaudiología",
     tipo: "prestacion",
-    desc: "Establece o reestablece las habilidades y funciones de la comunicación humana. Además, está capacitado para realizar prevención, evaluación, diagnóstico, y tratamiento de sus pacientes.",
+    desc: "Establece o reestablece las habilidades y funciones de la comunicación humana. ",
     precio: 10000,
     img: 'img/8.png',
     cantidad: 1
@@ -79,7 +79,7 @@ const listadoServicios = [
     id: 9,
     nombre: "Terapia ocupacional",
     tipo: "prestacion",
-    desc: "Prevención de discapacidades y disfunciones ocupacionales, mejora de la capacidad física y el tono muscular de los pacientes, aumentar la autonomía, la individualidad, la autoestima y la confianza de las personas con discapacidad física e intelectual.",
+    desc: "Prevención de discapacidades y disfunciones ocupacionales, mejora de la capacidad física e intelectual de los pacientes.",
     precio: 10000,
     img: 'img/9.png',
     cantidad: 1
@@ -89,7 +89,7 @@ const listadoServicios = [
     id: 10,
     nombre: "Nutrición",
     tipo: "prestacion",
-    desc: "Un nutricionista te ayuda a conocer cuál es tu necesidad calórica, un nutricionista te enseña cómo lograr un aporte suficiente de vitaminas y minerales,       evalúa tu condición nutricional y la de tu familia.",
+    desc: "Un nutricionista te ayuda a conocer cuál es tu necesidad calórica y te enseña cómo lograr un aporte suficiente de vitaminas y minerales.",
     precio: 10000,
     img: 'img/10.png',
     cantidad: 1
@@ -98,7 +98,7 @@ const listadoServicios = [
     id: 11,
     nombre: "Asistente social",
     tipo: "prestacion",
-    desc: "El asistente social es la pieza clave para lograr el bienestar de la comunidad y terminar con las injusticias. Este perfil profesional se encarga de garantizar los derechos humanos y de fomentar la inclusión social.",
+    desc: "El asistente social se encarga de garantizar los derechos humanos y de fomentar la inclusión social.",
     precio: 10000,
     img: 'img/11.png',
     cantidad: 1
@@ -107,7 +107,7 @@ const listadoServicios = [
     id: 12,
     nombre: "Acompañante terapéutico",
     tipo: "prestacion",
-    desc: "El acompañamiento terapéutico es , en sí mismo, un dispositivo de intervención que ayuda a superar las limitaciones de las Políticas Públicas en Salud Mental y de las instituciones que tratan problemáticas relacionadas.",
+    desc: "Favorecer el desarrollo biopsicosocial y/o autovalimiento de la persona asistida.Fortalecer los vínculos familiares y sociales;.",
     precio: 10000,
     img: 'img/12.png',
     cantidad: 1
@@ -156,11 +156,7 @@ if (procesarCompra) {
         confirmButtonText: "Aceptar",
       });
     } else {
-      Swal.fire({
-        icon: 'success',
-        title: 'Éxito!',
-        text: 'Perfecto! Pronto Recibiras un correo conla informacion de tu compra'
-      });
+      location.href = "compra.html";
     }
   });
 }
@@ -175,14 +171,14 @@ listadoServicios.forEach((serv) => {
       <h5 class="card-title">${nombre}</h5>
       <p class="card-text">Precio: $${precio}</p>
       <p class="card-text">Descripción: ${desc}</p>
-      <button class="btn btn-primary" onclick="agregarservicio(${id})">Comprar servicio</button>
+      <button class="btn btn-primary" onclick="agregarServicio(${id})">Comprar servicio</button>
     </div>
   </div>
     `;
   }
 });
 
-const agregarservicio = (id) => {
+const agregarServicio = (id) => {
   const existe = carrito.some(serv => serv.id === id)
 
   if (existe) {
@@ -253,3 +249,110 @@ function eliminarServicio(id) {
   carrito = carrito.filter((serv) => serv.id !== servId);
   mostrarCarrito();
 }
+function procesarPedido() {
+  carrito.forEach((prod) => {
+    const listaCompra = document.querySelector("#lista-compra tbody");
+    const { id, nombre, precio, img, cantidad } = prod;
+    if (listaCompra) {
+      const row = document.createElement("tr");
+      row.innerHTML += `
+              <td>
+              <img class="img-fluid img-carrito" src="${img}"/>
+              </td>
+              <td>${nombre}</td>
+            <td>${precio}</td>
+            <td>${cantidad}</td>
+            <td>${precio * cantidad}</td>
+            `;
+      listaCompra.appendChild(row);
+    }
+  });
+  totalProceso.innerText = carrito.reduce(
+    (acc, prod) => acc + prod.cantidad * prod.precio,
+    0
+  );
+}
+
+function enviarCompra(e) {
+  e.preventDefault()
+  const cliente = document.querySelector('#cliente').value
+  const email = document.querySelector('#correo').value
+
+  if (email === '' || cliente == '') {
+    Swal.fire({
+      title: "¡Debes completar tu email y nombre!",
+      text: "Rellena el formulario",
+      icon: "error",
+      confirmButtonText: "Aceptar",
+    })
+  } else {
+
+    const btn = document.getElementById('button');
+
+    // document.getElementById('procesar-pago')
+    //  .addEventListener('submit', function(event) {
+    //    event.preventDefault();
+
+    btn.value = 'Enviando...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_qxwi0jn';
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        btn.value = 'Finalizar compra';
+        alert('Correo enviado!');
+      }, (err) => {
+        btn.value = 'Finalizar compra';
+        alert(JSON.stringify(err));
+      });
+
+    const spinner = document.querySelector('#spinner')
+    spinner.classList.add('d-flex')
+    spinner.classList.remove('d-none')
+
+    setTimeout(() => {
+      spinner.classList.remove('d-flex')
+      spinner.classList.add('d-none')
+      formulario.reset()
+
+      const alertExito = document.createElement('p')
+      alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'col-12', 'mt-2', 'alert-success')
+      alertExito.textContent = 'Compra realizada correctamente'
+      formulario.appendChild(alertExito)
+
+      setTimeout(() => {
+        alertExito.remove()
+      }, 5000)
+
+    }, 5000)
+  }
+  localStorage.clear()
+
+};
+
+// Mostrar catalogo con FETCH 
+
+const mostrarCatalogo = document.getElementById('contenedor-catalogo')
+
+fetch('data/catalogoProductos.json')
+  .then((resp) => resp.json())
+  .then(data => {
+
+
+    data.forEach(servicio => {
+      const div = document.createElement('div');
+      div.classList.add('card-catalogo');
+      div.innerHTML += `
+        <div class="card-image-catalogo">
+              <img src=${servicio.img}>
+            <span class="card-title">${servicio.nombre}</span>
+        </div>
+        <div class="card-content"><br>
+              <i>${servicio.desc}</i>
+              <p>$ ${servicio.precio},00</p>
+        </div>
+        `
+      mostrarCatalogo.appendChild(div);
+    });
+  });

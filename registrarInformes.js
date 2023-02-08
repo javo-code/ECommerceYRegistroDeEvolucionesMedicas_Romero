@@ -23,7 +23,7 @@ const addTask = (task) => {
     div.innerHTML = `
         <div class="card text-center mb-4">
             <div class="card-body">
-                <strong>Título</strong>: ${task.title} <br>
+                <strong>Paciente </strong>: ${task.title}   <br>  
                 <strong>Informe</strong>: ${task.description} <br>
                 <strong>Fecha</strong>: ${task.date}
                 <button href="#" class="btn btn-danger" id="${task.title}" name="delete" value="title">Delete</button>
@@ -56,7 +56,7 @@ const showTasks = (tasks) => {
         div.innerHTML += `
             <div class="card card-informes text-center mb-4">
                 <div class="card-body">
-                    <strong>Paciente: </strong>: ${task.title}   <br>  
+                    <strong>Paciente </strong>: ${task.title}   <br>  
                     <strong>Informe</strong>: ${task.description} <br>
                     <strong>Fecha</strong>: ${task.date}
                     <button href="#" class="btn-form btn btn-danger" id="${task.title}" name="delete" value="${task.title}">Delete</button>
@@ -99,3 +99,28 @@ taskForm.addEventListener('submit', (e) => {
 
     addTask(task)
 });
+
+// Mostrar Historia Clínica del paciente con FETCH 
+
+const mostrarHistoriaClinica = document.getElementById('contenedor-hc')
+
+fetch('data/evoMed.json')
+    .then((respEvo) => respEvo.json())
+    .then(data => {
+
+
+        data.forEach(task => {
+            const div = document.createElement('div');
+            div.classList.add('card-catalogo');
+            div.innerHTML += `
+                <div class="card card-informes text-center mb-4">
+                <div class="card-body">
+                    <strong>Fecha</strong>: ${task.fecha} <br>  
+                    <strong>Fecha</strong>: ${task.idMed} <br>  
+                    <strong>Informe</strong>: ${task.Informe}
+                </div>
+            </div>
+            `
+            mostrarHistoriaClinica.appendChild(div);
+        });
+    });

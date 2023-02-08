@@ -3,7 +3,7 @@ const stockProductos = [
     id: 13,
     nombre: "Nutrilon",
     tipo: "alimento",
-    desc: "Fórmula láctea de inicio en polvo, nutricionalmente completa con prebióticos GOS-FOS 9:1, para lactantes de 0-6 meses de edad, cuando la lactancia materna no es posible o es insuficiente. Libre de sacarosa y gluten.",
+    desc: "pote x 1000 grs.",
     precio: 9000,
     img: 'img/nutrilon.jpg',
     cantidad: 1
@@ -13,7 +13,7 @@ const stockProductos = [
     id: 14,
     nombre: "Ensure",
     tipo: "alimento",
-    desc: "Vitaminas, minerales, proteínas y grasas. Se añade al régimen alimentario de las personas para contribuir a formar huesos fuertes, recuperar los músculos y la fuerza, y ayudar al cuerpo a sanar después de una lesión o cirugía. Es posible tomarlo por boca o administrarlo mediante alimentación por sonda.",
+    desc: "pote x 1000 grs.",
     precio: 5000,
     img: 'img/ensure.jpg',
     cantidad: 1
@@ -24,7 +24,7 @@ const stockProductos = [
     id: 15,
     nombre: "Lactoproteyn",
     tipo: "alimento",
-    desc: "Caseinato de calcio instantáneo que permite enriquecer las preparaciones alimenticias con proteínas de elevado valor biológico, aportando todos los aminoácidos esenciales y no esenciales. Lactoproteyn® puede ser agregado a preparaciones dulces o saladas, frías o calientes.",
+    desc: "pote x 1000 grs.",
     precio: 7000,
     img: 'img/lactoproteyn.jpg',
     cantidad: 1
@@ -34,7 +34,7 @@ const stockProductos = [
     id: 16,
     nombre: "Alfare",
     tipo: "alimento",
-    desc: "Fórmula semielemental con proteína extensamente hidrolizada, de baja osmolaridad, cuya administración está particularmente indicada para la alimentación de niños con problemas de digestión y absorción, provocados por trastornos de tipo gastrointestina.",
+    desc: "pote x 1000 grs.",
     precio: 10000,
     img: 'img/alfare.jpg',
     cantidad: 1
@@ -44,7 +44,7 @@ const stockProductos = [
     id: 17,
     nombre: "Fresubin",
     tipo: "alimento",
-    desc: "Suplemento de proteína de suero de leche en polvo (polvo instantáneo), sin fibra. Además es clínicamente libre de lactosa y sin gluten. La proteína en polvo de Fresubin se utiliza para el tratamiento dietético de pacientes con riesgo de malnutrición relacionada con alguna enfermedad, en particular aquellas que incrementan las necesidades de proteínas, tales como, el cáncer, después de una cirugía, la sarcopenia y el retraso en el crecimiento pediátrico.",
+    desc: "pote x 1000 grs.",
     precio: 9500,
     img: 'img/fresubin.jpg',
     cantidad: 1
@@ -54,7 +54,7 @@ const stockProductos = [
     id: 18,
     nombre: "Alterna",
     tipo: "alimento",
-    desc: "Fórmula nutricional líquida de alta densidad calórico/proteica, para personas con estrés metabólico que pueden beneficiarse con la adición de arginina en su dieta. Puede ser utilizado como única fuente de nutrientes o como suplemento a la dieta, bajo supervisión médica.",
+    desc: "pote x 1000 grs.",
     precio: 9500,
     img: 'img/alterna.jpg',
     cantidad: 1
@@ -104,17 +104,19 @@ if (procesarCompra) {
         confirmButtonText: "Aceptar",
       });
     } else {
+      location.href = "compra.html";
+      /*
       Swal.fire({
         icon: 'success',
         title: 'Éxito!',
         text: 'Perfecto! Pronto Recibiras un correo conla informacion de tu compra'
-      });
+      }); */
     }
   });
 }
 
 stockProductos.forEach((prod) => {
-  const { id, nombre, precio, desc, img, cantidad } = prod;
+  const { id, nombre, precio, desc, img } = prod;
   if (contenedor) {
     contenedor.innerHTML += `
     <div class="card mt-3" style="width: 18rem;">
@@ -123,7 +125,7 @@ stockProductos.forEach((prod) => {
       <h5 class="card-title">${nombre}</h5>
       <p class="card-text">Precio: $${precio}</p>
       <p class="card-text">Descripcion: ${desc}</p>
-      <button class="btn btn-primary" onclick="agregarProducto(${id})">Comprar Producto</button>
+      <button id="btn-comprar-producto" class="btn btn-primary" onclick="agregarProducto(${id})">Comprar Producto</button>
     </div>
   </div>
     `;
@@ -194,11 +196,124 @@ const mostrarCarrito = () => {
 
 function guardarStorage() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
-}
+};
 
 function eliminarProducto(id) {
   const prodId = id;
   carrito = carrito.filter((prod) => prod.id !== prodId);
   mostrarCarrito();
-}
+};
 
+//mensaje asincronico "enviar mail"
+const enviando = document.querySelector('.swal2-confirm')
+const enviandoComprobante = () => {
+  alert('Enviando comprobante...')
+};
+function procesarPedido() {
+  carrito.forEach((prod) => {
+    const listaCompra = document.querySelector("#lista-compra tbody");
+    const { nombre, precio, img, cantidad } = prod;
+    if (listaCompra) {
+      const row = document.createElement("tr");
+      row.innerHTML += `
+              <td>
+              <img class="img-fluid img-carrito" src="${img}"/>
+              </td>
+              <td>${nombre}</td>
+            <td>${precio}</td>
+            <td>${cantidad}</td>
+            <td>${precio * cantidad}</td>
+            `;
+      listaCompra.appendChild(row);
+    }
+  });
+  totalProceso.innerText = carrito.reduce(
+    (acc, prod) => acc + prod.cantidad * prod.precio,
+    0
+  );
+};
+
+function enviarCompra(e) {
+  e.preventDefault()
+  const cliente = document.querySelector('#cliente').value
+  const email = document.querySelector('#correo').value
+
+  if (email === '' || cliente == '') {
+    Swal.fire({
+      title: "¡Debes completar tu email y nombre!",
+      text: "Rellena el formulario",
+      icon: "error",
+      confirmButtonText: "Aceptar",
+    })
+  } else {
+
+    const btn = document.getElementById('button');
+
+    // document.getElementById('procesar-pago')
+    //  .addEventListener('submit', function(event) {
+    //    event.preventDefault();
+
+    btn.value = 'Enviando...';
+
+    const serviceID = 'default_service';
+    const templateID = 'template_qxwi0jn';
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        btn.value = 'Finalizar compra';
+        alert('Correo enviado!');
+      }, (err) => {
+        btn.value = 'Finalizar compra';
+        alert("Coloque una dirección de correo electrónico válida");
+      });
+
+    const spinner = document.querySelector('#spinner')
+    spinner.classList.add('d-flex')
+    spinner.classList.remove('d-none')
+
+    setTimeout(() => {
+      spinner.classList.remove('d-flex')
+      spinner.classList.add('d-none')
+      formulario.reset()
+
+      const alertExito = document.createElement('p')
+      alertExito.classList.add('alert', 'alerta', 'd-block', 'text-center', 'col-12', 'mt-2', 'alert-success')
+      alertExito.textContent = 'Compra realizada correctamente'
+      formulario.appendChild(alertExito)
+
+      setTimeout(() => {
+        alertExito.remove()
+      }, 000)
+
+
+    }, 000)
+  }
+  localStorage.clear()
+
+};
+
+
+// Mostrar catalogo con FETCH 
+
+const mostrarCatalogo = document.getElementById('contenedor-catalogo')
+
+fetch('data/catalogoServicios.json')
+  .then((resp) => resp.json())
+  .then(data => {
+
+
+    data.forEach(producto => {
+      const div = document.createElement('div');
+      div.classList.add('card-catalogo');
+      div.innerHTML += `<div class="card-image">
+                          <img src=${producto.img}>
+                          <span class="card-title">${producto.nombre}</span>
+                      </div>
+                      <div class="card-content"><br>
+                            <p>${producto.desc}</p>
+                            <p>$ ${producto.precio},00</p>
+                      </div>
+                      `
+      mostrarCatalogo.appendChild(div);
+    });
+  });

@@ -101,9 +101,6 @@ nav {
     padding: 10px;
 }
 
-/* .titleBar h2 ul li a i {
-    
-} */
 
 .modal-contenedor {
     display: flex;
@@ -112,7 +109,34 @@ nav {
     overflow: auto;
     color: #fff;
     font-weight: 500;
+    ;
 }
+
+#contenedor-catalogo {
+    display: flex;
+    max-width: 100%;
+    overflow-x: scroll;
+
+}
+
+h3,
+h4 span {
+    color: #09ba09
+}
+
+h4 {
+    color: #fff;
+}
+
+.card-image-catalogo span {
+    font-size: 30px;
+}
+
+.card-content i {
+    font-size: 20px;
+
+}
+
 
 .modal-body {
     background-image: url(img/nutricion.jpg);
@@ -126,12 +150,26 @@ nav {
     background-color: #fff;
 }
 
-.card {
+.card,
+.card-catalogo {
     padding: 20px;
-
 }
 
-.card:hover img {
+.card-catalogo {
+    background-color: #fff;
+}
+
+.btn-eliminartask {
+    background-color: rgb(255, 132, 0);
+}
+
+.card img,
+.card-catalogo img {
+    width: 225px;
+}
+
+.card:hover img,
+.card-catalogo:hover img {
     transform: scale(1.12);
     transition: transform 500ms;
 }
@@ -169,9 +207,9 @@ a {
 }
 
 .container-inf {
-    background-image: url(img/informes.png);
     background-repeat: no-repeat;
     background-size: 100% auto;
+    background-image: url(img/informes.png);
 }
 
 /* BANNER */
@@ -198,3 +236,5 @@ footer .redes img {
 footer .copyright {
     text-align: center;
 }
+
+/* seccion COMPRA*/
